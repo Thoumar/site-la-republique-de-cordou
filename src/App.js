@@ -13,13 +13,13 @@ function App() {
       </div>
       <div className="App__Order">
         <span className="Order__title">Commander</span>
-        <a className="Order__cta" href="#">
+        <a className="Order__cta" href="https://www.google.com/">
           <img className="Order__logo" src="./images/" alt="" />
         </a>
-        <a className="Order__cta" href="#">
+        <a className="Order__cta" href="https://www.google.com/">
           <img className="Order__logo" src="./images/" alt="" />
         </a>
-        <a className="Order__cta" href="#">
+        <a className="Order__cta" href="https://www.google.com/">
           <img className="Order__logo" src="./images/" alt="" />
         </a>
       </div>
