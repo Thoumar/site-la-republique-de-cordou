@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <div className="App__Text">
+        <h1 className="App__title">La république de Cordou</h1>
+        <p className="App__description">
+          Xavier Fourtou, psychanalyste et auteur de ce conte illustré avec talent par la designer Lisa Chaput, nous livre une histoire tendre et
+          sociale qui donne envie de vivre plus fort ici et ailleurs.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+      </div>
+      <div className="App__Order">
+        <span className="Order__title">Commander</span>
+        <a className="Order__cta" href="#">
+          <img className="Order__logo" src="./images/" alt="" />
         </a>
-      </header>
+        <a className="Order__cta" href="#">
+          <img className="Order__logo" src="./images/" alt="" />
+        </a>
+        <a className="Order__cta" href="#">
+          <img className="Order__logo" src="./images/" alt="" />
+        </a>
+      </div>
+      <div className="App__Illustration"></div>
     </div>
   );
 }

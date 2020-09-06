@@ -1,13 +1,196 @@
-body {
+*,
+*::after,
+*::before {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-family: "Helvetica";
+  height: 100vh;
+  width: 100vw;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#root,
+.App {
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.App__Text {
+  position: absolute;
+  top: 10rem;
+  right: 15rem;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.App__title {
+  text-align: right;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+
+.App__description {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: right;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.App__Order {
+  z-index: 2;
+  position: absolute;
+  bottom: 10rem;
+  right: 15rem;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.Order__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.Order__cta {
+  margin-top: 2rem;
+  height: 5rem;
+  display: inline-block;
+  border-radius: 5rem;
+  width: 13rem;
+  background-color: #e92e49;
+}
+
+.Order__cta:hover::after,
+.Order__cta:active::after,
+.Order__cta:focus::after {
+  content: "";
+  height: 5rem;
+  width: 13rem;
+  border-radius: 5rem;
+  display: inline-block;
+  background-color: #e92e49;
+  opacity: 0.3;
+  animation: scaleUp 0.5s;
+  transition: all ease-in;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.App__Illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  background-size: cover;
+  z-index: 1;
+  background-image: url(./images/illustration.png);
+  animation: fadeInLeft 3s;
+  transition: all ease 1s;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeInLeftMob {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translateX(00%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App__Illustration {
+    animation: fadeInLeftMob 4s;
+    opacity: 0.2;
+  }
+  .Order__cta {
+    outline: none;
+    max-width: 20rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App__Text {
+    top: 5rem;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .App__title,
+  .App__description {
+    padding: 0 8rem;
+    text-align: center;
+  }
+  .App__Order {
+    bottom: 5rem;
+    left: 50%;
+    right: auto;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+  .Order__cta {
+    outline: none;
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .App__title,
+  .App__description {
+    padding: 0 2rem;
+  }
 }
