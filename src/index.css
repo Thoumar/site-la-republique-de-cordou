@@ -32,30 +32,15 @@ body {
   align-items: flex-end;
 }
 
-.App__Illustration {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 1;
-  background-size: cover;
-  z-index: 1;
-  background-image: url(./images/illustration.png);
-  animation: fadeInLeft 3s;
-  transition: all ease 1s;
-}
-
 .App__Text {
   position: absolute;
   top: 10rem;
-  right: 15rem;
+  right: 10rem;
   max-width: 65rem;
   display: flex;
   flex-direction: column;
-  display: flex;
-  flex-direction: column;
   z-index: 2;
+  align-items: flex-end;
 }
 
 .App__title {
@@ -78,12 +63,18 @@ body {
 .App__Order {
   z-index: 2;
   position: absolute;
-  bottom: 10rem;
-  right: 15rem;
+  bottom: 5rem;
+  right: 10rem;
   display: flex;
   flex-direction: column;
-
   text-align: center;
+}
+
+.App__Icon {
+  margin-top: 2rem;
+  height: 4rem;
+  width: 4rem;
+
 }
 
 .Order__title {
@@ -99,7 +90,7 @@ body {
   width: 13rem;
   background-color: #e92e49;
 }
-
+/* 
 .Order__cta:hover::after,
 .Order__cta:active::after,
 .Order__cta:focus::after {
@@ -112,7 +103,7 @@ body {
   opacity: 0.3;
   animation: scaleUp 0.5s;
   transition: all ease-in;
-}
+} */
 
 .Order__logo {
   height: 100%;

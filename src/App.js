@@ -1,4 +1,8 @@
 import React from "react";
+
+import bgVideo from "./images/cordoue_bg.mp4"
+import soundIcon from "./images/sound_icon.png"
+
 import "./App.css";
 
 function App() {
@@ -13,6 +17,7 @@ function App() {
           <br />
           tendre et sociale qui donne envie de vivre plus fort ici et ailleurs.
         </p>
+        <img className="App__Icon" src={soundIcon} alt='Sound icon' />
       </div>
       <div className="App__Order">
         <span className="Order__title">Commander</span>
@@ -26,7 +31,10 @@ function App() {
           <img className="Order__logo" src={require("./images/fnac_icon.png")} alt="Icône marque Fnac" />
         </a>
       </div>
-      <div className="App__Illustration"></div>
+      
+      <video className="App__video"  autoPlay="autoplay" loop="loop" muted>
+				<source src={bgVideo} type="video/mp4" />
+			</video>
     </div>
   );
 }
