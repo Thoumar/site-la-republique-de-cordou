@@ -34,8 +34,8 @@ body {
 
 .App__Text {
   position: absolute;
-  top: 10rem;
-  right: 10rem;
+  top: 8rem;
+  right: 8rem;
   max-width: 65rem;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@ body {
   z-index: 2;
   position: absolute;
   bottom: 5rem;
-  right: 10rem;
+  right: 8rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -74,7 +74,17 @@ body {
   margin-top: 2rem;
   height: 4rem;
   width: 4rem;
+}
 
+.App__video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .Order__title {
@@ -90,20 +100,6 @@ body {
   width: 13rem;
   background-color: #e92e49;
 }
-/* 
-.Order__cta:hover::after,
-.Order__cta:active::after,
-.Order__cta:focus::after {
-  content: "";
-  height: 5rem;
-  width: 13rem;
-  border-radius: 5rem;
-  display: inline-block;
-  background-color: #e92e49;
-  opacity: 0.3;
-  animation: scaleUp 0.5s;
-  transition: all ease-in;
-} */
 
 .Order__logo {
   height: 100%;
@@ -144,6 +140,20 @@ body {
   100% {
     opacity: 0.2;
     transform: translateX(00%);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .App__video {
+      width:100%;
+      height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .App__video { 
+    width:auto;
+    height: 100%;
   }
 }
 
