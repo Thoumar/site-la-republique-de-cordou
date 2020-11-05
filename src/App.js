@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import bgVideo from "./images/cordoue_bg.mp4"
 import soundIcon from "./images/sound_icon.png"
+import soundIconOff from "./images/sound_icon_off.png"
 
 import "./App.css";
 
-function App() {
+const App = () => {
+
+  const [soundState, setSoundState] = useState({ on: true })
+
+  const toggleState = () => {
+    setSoundState((previousState) => {
+      return { on: !previousState.on }
+    })
+  }
+
+  
   return (
     <div className="App">
       <div className="App__Text">
@@ -17,7 +28,7 @@ function App() {
           histoire tendre et sociale qui donne envie<br />
           de vivre plus fort ici et ailleurs.
         </p>
-        <img className="App__Icon" src={soundIcon} alt='Sound icon' />
+        <img onClick={toggleState} className="App__Icon" src={soundState.on ? soundIcon : soundIconOff} alt='Sound icon' />
       </div>
       <div className="App__Order">
         <span className="Order__title">Commander</span>
@@ -32,7 +43,7 @@ function App() {
         </a>
       </div>
       
-      <video className="App__video"  autoPlay="autoplay" loop="loop" muted>
+      <video className="App__video"  autoPlay="autoplay" loop="loop" muted={!soundState.on}>
 				<source src={bgVideo} type="video/mp4" />
 			</video>
     </div>
