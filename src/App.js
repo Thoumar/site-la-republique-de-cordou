@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="App__Text">
-        <h1 className="App__title">La république de Cordou</h1>
+        <h1 className="App__title">La république de Cordoue</h1>
         <p className="App__description">
           Xavier Fourtou, psychanalyste et auteur<br />
           de ce conte illustré avec talent par la<br />
