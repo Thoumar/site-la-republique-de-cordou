@@ -191,12 +191,26 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+  .App__lang {
+    top: 15px;
+    right: 30px;
+    font-size: 2rem;
+    transform: rotate(0deg);
+    z-index: 1;
+  }
   .App__Text {
-    top: 5rem;
+    top: 9rem;
     right: 0;
     left: 0;
     max-width: 100%;
     text-align: center;
+  }
+  .App__Icon {
+    
+    margin: 4rem auto 0 auto;
   }
   .App__title,
   .App__description {
