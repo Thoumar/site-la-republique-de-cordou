@@ -6,8 +6,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: local('HelveticaNeueLight'), url(./fonts/HelveticaNeueLight.ttf) format('truetype');
+}
+
 html {
-  font-family: "Helvetica";
+  font-family: "HelveticaNeueLight";
   height: 100vh;
   width: 100vw;
   font-size: 10px;
@@ -30,6 +35,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.App__lang {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  font-size: 2rem;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.App__lang > span {
+  cursor: pointer;
 }
 
 .App__Text {
@@ -72,8 +90,8 @@ body {
 
 .App__Icon {
   margin-top: 2rem;
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .App__video {
@@ -85,6 +103,10 @@ body {
   width: auto;
   height: auto;
   display: block;
+}
+
+.App__audio {
+  display: none;
 }
 
 .Order__title {
