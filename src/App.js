@@ -54,11 +54,11 @@ const App = () => {
     FR: {
       appTitle: "La république de Cordoue",
       text: {
-        lineOne: "Xavier Fourtou, psychanalyste et auteur",
-        lineTwo: "de ce conte illustré avec talent par la",
-        lineThree: "designer Lisa Chaput, nous livre une",
-        lineFour: "histoire tendre et sociale qui donne envie",
-        lineFive: "de vivre plus fort ici et ailleurs.",
+        lineOne: "Xavier Fourtou, psychanalyste et auteur de",
+        lineTwo: "ce conte illustré avec talent par la designer",
+        lineThree: "Lisa Chaput, nous livre une histoire tendre",
+        lineFour: "et sociale qui donne envie de vivre",
+        lineFive: "plus fort ici et ailleurs.",
         lineSix: ""
       },
       order: "Commander",
