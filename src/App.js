@@ -121,11 +121,9 @@ const App = () => {
         </a>
       </div>
 
-      <audio className="App__audio" loop autoPlay="autoplay" muted={!soundState.on}>
-        <source src={bgAudio} type="audio/mp3" />
-      </audio>
+    <audio src={bgAudio} controls autoPlay muted={!soundState.on} />
 
-      <video className="App__video"  autoPlay="autoplay" loop="loop" preload="auto">
+      <video className="App__video"  autoPlay loops>
 				<source src={bgVideo} type="video/mp4" />
 			</video>
     </div>
