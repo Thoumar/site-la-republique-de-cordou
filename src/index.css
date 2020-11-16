@@ -41,7 +41,7 @@ body {
   position: absolute;
   top: 100px;
   right: 0px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transform: rotate(-90deg);
   z-index: 1;
 }
