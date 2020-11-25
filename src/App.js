@@ -39,15 +39,18 @@ const App = () => {
       links: {
         fauves: {
           uri: "https://www.fauves-editions.fr/index.asp?navig=catalogue&obj=livre&no=202&razSqlClone=1",
-          alt: "Icône marque Fauves"
+          alt: "Icône marque Fauves",
+          active: true
         },
         amazon: {
           uri: "https://www.amazon.fr/Republique-Cordoue-Fourtou-Chaput/dp/B08LNBS5L7/ref=sr_1_1?Go.x=0&Go.y=0&__mk_fr_FR=%EF%BF%BDM%EF%BF%BDZ%EF%BF%BD%EF%BF%BD&dchild=1&keywords=9791030203585&qid=1605342276&sr=8-1",
-          alt: "Icône marque Amazon"
+          alt: "Icône marque Amazon",
+          active: false
         },
         fnac: {
           uri: "https://livre.fnac.com/a15255806/Xavier-Fourtou-La-Republique-de-Cordoue#omnsearchpos=1",
-          alt: "Icône marque Fnac"
+          alt: "Icône marque Fnac",
+          active: false
         },
       }
     },
@@ -65,15 +68,18 @@ const App = () => {
       links: {
         fauves: {
           uri: "https://www.fauves-editions.fr/index.asp?navig=catalogue&obj=livre&no=202&razSqlClone=1",
-          alt: "Icône marque Fauves"
+          alt: "Icône marque Fauves",
+          active: true
         },
         amazon: {
           uri: "https://www.amazon.fr/Republique-Cordoue-Fourtou-Chaput/dp/B08LNBS5L7/ref=sr_1_1?Go.x=0&Go.y=0&__mk_fr_FR=%EF%BF%BDM%EF%BF%BDZ%EF%BF%BD%EF%BF%BD&dchild=1&keywords=9791030203585&qid=1605342276&sr=8-1",
-          alt: "Icône marque Amazon"
+          alt: "Icône marque Amazon",
+          active: false
         },
         fnac: {
           uri: "https://livre.fnac.com/a15255806/Xavier-Fourtou-La-Republique-de-Cordoue#omnsearchpos=1",
-          alt: "Icône marque Fnac"
+          alt: "Icône marque Fnac",
+          active: true
         },
       }
     }
@@ -110,20 +116,32 @@ const App = () => {
       </div>
       <div className="App__Order">
         <span className="Order__title">{content[langState.lang].order}</span>
-        <a className="Order__cta" href={content[langState.lang].links.fauves.uri}>
-          <img className="Order__logo" src={require("./images/fauves_icon.png")} alt={content[langState.lang].links.fauves.alt} />
-        </a>
-        <a className="Order__cta" href={content[langState.lang].links.amazon.uri}>
-          <img className="Order__logo" src={require("./images/amazon_icon.png")} alt={content[langState.lang].links.amazon.alt} />
-        </a>
-        <a className="Order__cta" href={content[langState.lang].links.fnac.uri}>
-          <img className="Order__logo" src={require("./images/fnac_icon.png")} alt={content[langState.lang].links.fnac.alt} />
-        </a>
+        {
+          content[langState.lang].links.fauves.active
+            ? <a className="Order__cta" href={content[langState.lang].links.fauves.uri}>
+                <img className="Order__logo" src={require("./images/fauves_icon.png")} alt={content[langState.lang].links.fauves.alt} />
+              </a>
+            : null
+        }
+        {
+          content[langState.lang].links.amazon.active
+            ? <a className="Order__cta" href={content[langState.lang].links.amazon.uri}>
+                <img className="Order__logo" src={require("./images/amazon_icon.png")} alt={content[langState.lang].links.amazon.alt} />
+              </a>
+            : null
+        }
+        {
+          content[langState.lang].links.fnac.active
+            ? <a className="Order__cta" href={content[langState.lang].links.fnac.uri}>
+                <img className="Order__logo" src={require("./images/fnac_icon.png")} alt={content[langState.lang].links.fnac.alt} />
+              </a>
+            : null
+        }
       </div>
 
-    <audio src={bgAudio} controls autoPlay muted={!soundState.on} />
+    <audio src={bgAudio} controls autoPlay loops="true" muted={!soundState.on} />
 
-      <video className="App__video"  autoPlay loops>
+      <video className="App__video" autoPlay>
 				<source src={bgVideo} type="video/mp4" />
 			</video>
     </div>
