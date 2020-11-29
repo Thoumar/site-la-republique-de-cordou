@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import bgVideo from "./images/cordoue_bg.mp4"
 import bgAudio from "./audio/music_bg.mp3"
+import silenceAudio from "./audio/music_silence.mp3"
 import soundIcon from "./images/sound_icon.png"
 import soundIconOff from "./images/sound_icon_off.png"
 
@@ -9,7 +10,7 @@ import "./App.css";
 
 const App = () => {
 
-  const [soundState, setSoundState] = useState({ on: false })
+  const [soundState, setSoundState] = useState({ on: true })
   const [langState, setlangState] = useState({ lang: "FR" })
 
   const toggleState = () => {
@@ -26,15 +27,18 @@ const App = () => {
 
   useEffect(() => {
     const video = document.querySelector('video');
-
     const playPromise = video.play() || Promise.reject('');
-    playPromise.then(() => {
-      // Video could be autoplayed, do nothing.
-    }).catch(err => {
-      // Video couldn't be autoplayed because of autoplay policy. Mute it and play.
+    playPromise.then(() => { }).catch(err => {
       video.muted = true;
       video.play();
     });
+
+    if(!soundState.on) {
+      var iframe = document.querySelector('iframe');
+      if(iframe && iframe.contentWindow && iframe.contentWindow.document && iframe.contentWindow.document.querySelector('video')) {
+        iframe.contentWindow.document.querySelector('video').muted = soundState.on
+      }
+    }
   })
 
   const content = {
@@ -152,10 +156,13 @@ const App = () => {
         }
       </div>
 
-      <audio autoPlay={true} muted={!soundState.on}>
-        <source src={bgAudio} type="audio/mp3" />
+
+      <iframe title="audio" src={silenceAudio} allow="autoplay" id="audio" style={{ display: "none" }}></iframe>
+      <audio id="player" autoPlay loop muted={!soundState.on}>
+          <source src={bgAudio} />
       </audio>
-      
+
+
       <video className="App__video">
 				<source src={bgVideo} type="video/mp4" />
 			</video>
