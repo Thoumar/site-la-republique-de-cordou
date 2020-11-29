@@ -96,7 +96,7 @@ body {
 
 .App__video {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
@@ -240,4 +240,8 @@ body {
   .App__description {
     padding: 0 2rem;
   }
+}
+
+audio {
+  display: none;
 }

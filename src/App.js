@@ -9,7 +9,7 @@ import "./App.css";
 
 const App = () => {
 
-  const [soundState, setSoundState] = useState({ on: true })
+  const [soundState, setSoundState] = useState({ on: false })
   const [langState, setlangState] = useState({ lang: "FR" })
 
   const toggleState = () => {
@@ -152,7 +152,11 @@ const App = () => {
         }
       </div>
 
-      <video className="App__video" muted={!soundState.on}>
+      <audio autoPlay={true} muted={!soundState.on}>
+        <source src={bgAudio} type="audio/mp3" />
+      </audio>
+      
+      <video className="App__video">
 				<source src={bgVideo} type="video/mp4" />
 			</video>
     </div>
