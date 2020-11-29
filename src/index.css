@@ -194,6 +194,11 @@ body {
   html {
     font-size: 8px;
   }
+  .App__video {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+  }
   .App__lang {
     top: 15px;
     right: 30px;

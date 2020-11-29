@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import bgVideo from "./images/cordoue_bg.mp4"
 import bgAudio from "./audio/music_bg.mp3"
@@ -24,6 +24,19 @@ const App = () => {
     })
   }
 
+  useEffect(() => {
+    const video = document.querySelector('video');
+
+    const playPromise = video.play() || Promise.reject('');
+    playPromise.then(() => {
+      // Video could be autoplayed, do nothing.
+    }).catch(err => {
+      // Video couldn't be autoplayed because of autoplay policy. Mute it and play.
+      video.muted = true;
+      video.play();
+    });
+  })
+
   const content = {
     EN: {
       appTitle: "The Republic of Cordoba",
@@ -35,7 +48,7 @@ const App = () => {
         lineFive: "andsociable, and will make you want",
         lineSix: "to live more fully, wherever you may be."
       },
-      order: "Commander",
+      order: "Order",
       links: {
         fauves: {
           uri: "https://www.fauves-editions.fr/index.asp?navig=catalogue&obj=livre&no=202&razSqlClone=1",
@@ -139,9 +152,7 @@ const App = () => {
         }
       </div>
 
-    <audio src={bgAudio} controls autoPlay loops="true" muted={!soundState.on} />
-
-      <video className="App__video" autoPlay>
+      <video className="App__video" muted={!soundState.on}>
 				<source src={bgVideo} type="video/mp4" />
 			</video>
     </div>
