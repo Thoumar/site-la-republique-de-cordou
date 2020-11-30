@@ -10,7 +10,7 @@ import "./App.css";
 
 const App = () => {
 
-  const [soundState, setSoundState] = useState({ on: true })
+  const [soundState, setSoundState] = useState({ on: false })
   const [langState, setlangState] = useState({ lang: "FR" })
 
   const toggleState = () => {
@@ -156,12 +156,10 @@ const App = () => {
         }
       </div>
 
-
-      <iframe title="audio" src={silenceAudio} allow="autoplay" id="audio" style={{ display: "none" }}></iframe>
+      {/* <iframe title="audio" src={silenceAudio} allow="autoplay" id="audio" style={{ display: "none" }}></iframe> */}
       <audio id="player" autoPlay loop muted={!soundState.on}>
           <source src={bgAudio} />
       </audio>
-
 
       <video className="App__video">
 				<source src={bgVideo} type="video/mp4" />
