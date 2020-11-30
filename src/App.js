@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import bgVideo from "./images/cordoue_bg.mp4"
 import bgAudio from "./audio/music_bg.mp3"
-import silenceAudio from "./audio/music_silence.mp3"
 import soundIcon from "./images/sound_icon.png"
 import soundIconOff from "./images/sound_icon_off.png"
 
@@ -156,7 +155,6 @@ const App = () => {
         }
       </div>
 
-      {/* <iframe title="audio" src={silenceAudio} allow="autoplay" id="audio" style={{ display: "none" }}></iframe> */}
       <audio id="player" autoPlay loop muted={!soundState.on}>
           <source src={bgAudio} />
       </audio>
